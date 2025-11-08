@@ -40,3 +40,12 @@ export interface GapAnalysisResult {
   missingSkillsByCategory: Record<SkillCategory, string[]>;
 }
 
+export interface UserProfile {
+  name?: string;
+  school?: string;
+  graduationYear?: string;
+  experienceLevel?: 'student' | 'recent-grad' | 'career-switcher' | 'other';
+  dreamRole?: string;
+  skills: string[];
+}
+
