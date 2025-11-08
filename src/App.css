@@ -1,0 +1,129 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  padding: 3rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.app-subtitle {
+  font-size: 1.15rem;
+  text-align: center;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-section,
+.role-section,
+.results-section,
+.learning-path-section {
+  width: 100%;
+}
+
+.empty-state {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.empty-state-content p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.app-footer {
+  background: #2c3e50;
+  color: white;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.app-footer p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .app-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .app-header {
+    padding: 2rem 0;
+  }
+
+  .app-main {
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .app-content {
+    gap: 1.5rem;
+  }
+
+  .empty-state {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.75rem;
+  }
+
+  .app-subtitle {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,107 @@
+.role-selection-container {
+  margin-bottom: 2rem;
+}
+
+.role-selection-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.role-card {
+  padding: 1.5rem;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.role-card:hover {
+  border-color: #4a90e2;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+  transform: translateY(-2px);
+}
+
+.role-card:focus {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.role-card.selected {
+  border-color: #4a90e2;
+  background: #f0f7ff;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.role-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.role-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.role-responsibilities {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.role-responsibilities strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.role-responsibilities ul {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.role-responsibilities li {
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.role-selected-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #4a90e2;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .roles-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .role-card {
+    padding: 1.25rem;
+  }
+
+  .role-card-title {
+    font-size: 1.1rem;
+  }
+}
+
