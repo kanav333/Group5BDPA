@@ -106,6 +106,16 @@ src/
 - Gamification with badges
 - User accounts and persistence
 
+## Learning Resources
+
+Learning resources are curated from [roadmap.sh](https://roadmap.sh), a community-driven platform that provides free learning roadmaps for developers. We give full credit to roadmap.sh for providing these valuable resources.
+
+### Attribution
+
+- Learning resources in the Learning Path section are attributed to roadmap.sh
+- Footer includes attribution to roadmap.sh
+- All roadmap.sh resources link back to the original roadmap.sh pages
+
 ## License
 
 Built for BDPA Indianapolis Hackathon

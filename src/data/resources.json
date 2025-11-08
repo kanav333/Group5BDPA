@@ -286,6 +286,166 @@
     "url": "https://www.linkedin.com/learning/time-management-fundamentals",
     "platform": "LinkedIn Learning",
     "type": "video"
+  },
+  {
+    "id": "html-roadmap-1",
+    "skillId": "html",
+    "title": "Frontend Developer Roadmap - HTML",
+    "url": "https://roadmap.sh/frontend",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "css-roadmap-1",
+    "skillId": "css",
+    "title": "Frontend Developer Roadmap - CSS",
+    "url": "https://roadmap.sh/frontend",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "javascript-roadmap-1",
+    "skillId": "javascript",
+    "title": "Frontend Developer Roadmap - JavaScript",
+    "url": "https://roadmap.sh/frontend",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "typescript-roadmap-1",
+    "skillId": "typescript",
+    "title": "Frontend Developer Roadmap - TypeScript",
+    "url": "https://roadmap.sh/frontend",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "react-roadmap-1",
+    "skillId": "react",
+    "title": "React Developer Roadmap",
+    "url": "https://roadmap.sh/react",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "nodejs-roadmap-1",
+    "skillId": "nodejs",
+    "title": "Backend Developer Roadmap - Node.js",
+    "url": "https://roadmap.sh/backend",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "express-roadmap-1",
+    "skillId": "express",
+    "title": "Backend Developer Roadmap - Express.js",
+    "url": "https://roadmap.sh/backend",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "python-roadmap-1",
+    "skillId": "python",
+    "title": "Python Developer Roadmap",
+    "url": "https://roadmap.sh/python",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "django-roadmap-1",
+    "skillId": "django",
+    "title": "Python Developer Roadmap - Django",
+    "url": "https://roadmap.sh/python",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "flask-roadmap-1",
+    "skillId": "flask",
+    "title": "Python Developer Roadmap - Flask",
+    "url": "https://roadmap.sh/python",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "java-roadmap-1",
+    "skillId": "java",
+    "title": "Java Developer Roadmap",
+    "url": "https://roadmap.sh/java",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "sql-roadmap-1",
+    "skillId": "sql",
+    "title": "PostgreSQL DBA Roadmap - SQL",
+    "url": "https://roadmap.sh/postgresql-dba",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "mongodb-roadmap-1",
+    "skillId": "mongodb",
+    "title": "MongoDB Developer Roadmap",
+    "url": "https://roadmap.sh/mongodb",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "postgresql-roadmap-1",
+    "skillId": "postgresql",
+    "title": "PostgreSQL DBA Roadmap",
+    "url": "https://roadmap.sh/postgresql-dba",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "mysql-roadmap-1",
+    "skillId": "mysql",
+    "title": "PostgreSQL DBA Roadmap - MySQL",
+    "url": "https://roadmap.sh/postgresql-dba",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "docker-roadmap-1",
+    "skillId": "docker",
+    "title": "DevOps Roadmap - Docker",
+    "url": "https://roadmap.sh/devops",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "aws-roadmap-1",
+    "skillId": "aws",
+    "title": "AWS Roadmap",
+    "url": "https://roadmap.sh/aws",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "pandas-roadmap-1",
+    "skillId": "pandas",
+    "title": "Data Analyst Roadmap - Pandas",
+    "url": "https://roadmap.sh/data-analyst",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "tableau-roadmap-1",
+    "skillId": "tableau",
+    "title": "Data Analyst Roadmap - Tableau",
+    "url": "https://roadmap.sh/data-analyst",
+    "platform": "roadmap.sh",
+    "type": "interactive"
+  },
+  {
+    "id": "excel-roadmap-1",
+    "skillId": "excel",
+    "title": "Data Analyst Roadmap - Excel",
+    "url": "https://roadmap.sh/data-analyst",
+    "platform": "roadmap.sh",
+    "type": "interactive"
   }
 ]
 

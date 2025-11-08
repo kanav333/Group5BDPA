@@ -28,9 +28,9 @@ function App() {
   // Handle landing page completion
   const handleLandingComplete = (profile: UserProfile) => {
     setUserProfile(profile);
-    setUserSkills(profile.skills);
-    if (profile.dreamRole) {
-      setSelectedRoleId(profile.dreamRole);
+    setUserSkills(profile.skills || []);
+    if (profile.targetRoleId) {
+      setSelectedRoleId(profile.targetRoleId);
     }
   };
 
@@ -71,10 +71,10 @@ function App() {
             {userProfile.name && `Welcome, ${userProfile.name}! `}
             See your path to your first tech role. Compare your skills to job requirements and get a personalized learning path.
           </p>
-          {userProfile.school && (
+          {(userProfile as any).school && (
             <p className="app-user-info">
-              {userProfile.school}
-              {userProfile.graduationYear && ` • Class of ${userProfile.graduationYear}`}
+              {(userProfile as any).school}
+              {(userProfile as any).graduationYear && ` • Class of ${(userProfile as any).graduationYear}`}
             </p>
           )}
         </div>
@@ -137,6 +137,17 @@ function App() {
       <footer className="app-footer">
         <div className="container">
           <p>CareerPath Gap Analyzer - Built for BDPA Indianapolis Hackathon</p>
+          <p className="footer-attribution">
+            Learning resources powered by{' '}
+            <a
+              href="https://roadmap.sh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              roadmap.sh
+            </a>
+          </p>
         </div>
       </footer>
     </div>

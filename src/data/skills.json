@@ -184,6 +184,55 @@
     "label": "Time Management",
     "aliases": ["time management", "Time Management", "time-management"],
     "category": "soft"
+  },
+  {
+    "id": "cplusplus",
+    "label": "C++",
+    "aliases": ["c++", "C++", "cpp", "CPP", "c plus plus", "C Plus Plus"],
+    "category": "language"
+  },
+  {
+    "id": "csharp",
+    "label": "C#",
+    "aliases": ["c#", "C#", "c sharp", "C sharp"],
+    "category": "language"
+  },
+  {
+    "id": "ruby",
+    "label": "Ruby",
+    "aliases": ["ruby", "Ruby", "ruby on rails"],
+    "category": "language"
+  },
+  {
+    "id": "r",
+    "label": "R",
+    "aliases": ["r", "R", "r language", "r programming"],
+    "category": "language"
+  },
+  {
+    "id": "php",
+    "label": "PHP",
+    "aliases": ["php", "PHP"],
+    "category": "language"
+  },
+  {
+    "id": "go",
+    "label": "Go",
+    "aliases": ["go", "Go", "golang", "Golang"],
+    "category": "language"
+  },
+  {
+    "id": "swift",
+    "label": "Swift",
+    "aliases": ["swift", "Swift"],
+    "category": "language"
+  },
+  {
+    "id": "kotlin",
+    "label": "Kotlin",
+    "aliases": ["kotlin", "Kotlin"],
+    "category": "language"
   }
+  
 ]
 

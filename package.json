@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scrape:roadmap": "node scripts/scrape-roadmap-puppeteer.js",
+    "scrape:roadmap:basic": "node scripts/scrape-roadmap.js",
+    "merge:resources": "node scripts/merge-resources.js",
+    "scrape:all": "npm run scrape:roadmap && npm run merge:resources"
   },
   "dependencies": {
     "react": "^19.1.1",

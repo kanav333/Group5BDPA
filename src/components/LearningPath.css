@@ -165,6 +165,76 @@
   font-weight: 600;
 }
 
+/* Roadmap.sh specific styles */
+.roadmap-resource {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.roadmap-resource:hover {
+  border-color: #059669;
+  background: #dcfce7;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.roadmap-footer {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 8px;
+}
+
+.roadmap-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.roadmap-link:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
+.path-item-fallback .roadmap-link {
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* Attribution section */
+.learning-path-attribution {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-top: 2px solid #e9ecef;
+  text-align: center;
+}
+
+.attribution-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.attribution-link {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.attribution-link:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .learning-path-container {
     padding: 1.5rem;

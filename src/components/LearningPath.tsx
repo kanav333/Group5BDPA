@@ -1,5 +1,6 @@
 import type { Skill, LearningResource, GapAnalysisResult, RoleDefinition } from '../types';
 import { getSkillLabel } from '../utils/gapAnalysis';
+import { getRoadmapUrl, hasRoadmapMapping } from '../utils/roadmapMapper';
 import './LearningPath.css';
 
 interface LearningPathProps {
@@ -19,13 +20,36 @@ export function LearningPath({
     return null;
   }
 
-  // Get resources for a skill
+  // Get resources for a skill (prioritize free resources, especially videos)
   const getResourcesForSkill = (skillId: string): LearningResource[] => {
-    return resources.filter(resource => resource.skillId === skillId).slice(0, 2);
+    const allResources = resources.filter(resource => resource.skillId === skillId);
+    
+    // Separate by type and platform
+    const videoResources = allResources.filter(r => r.type === 'video' && r.platform === 'YouTube');
+    const interactiveResources = allResources.filter(r => r.type === 'interactive' && !r.platform.includes('Coursera'));
+    const roadmapResources = allResources.filter(r => r.platform === 'roadmap.sh');
+    const otherResources = allResources.filter(r => 
+      r.type === 'docs' || r.type === 'article' || 
+      (r.type === 'interactive' && !interactiveResources.includes(r))
+    );
+    
+    // Prioritize: Videos > Interactive (free) > Docs/Articles > Roadmap.sh
+    // Limit to 4-5 resources max
+    const prioritizedResources = [
+      ...videoResources.slice(0, 2),
+      ...interactiveResources.slice(0, 2),
+      ...otherResources.slice(0, 1),
+      ...roadmapResources.slice(0, 1)
+    ].slice(0, 5);
+    
+    return prioritizedResources;
   };
 
   // Get resource type icon/emoji
-  const getResourceTypeIcon = (type: string): string => {
+  const getResourceTypeIcon = (type: string, platform?: string): string => {
+    if (platform === 'roadmap.sh') {
+      return '🗺️'; // Special icon for roadmap.sh
+    }
     switch (type) {
       case 'video':
         return '📹';
@@ -87,7 +111,7 @@ export function LearningPath({
                   <p className="resource-instruction">
                     {skillResources.length === 1
                       ? 'Start here:'
-                      : 'Start here → then continue:'}
+                      : 'Recommended learning resources:'}
                   </p>
                   <div className="resources-list">
                     {skillResources.map((resource, resIndex) => (
@@ -96,35 +120,81 @@ export function LearningPath({
                         href={resource.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="resource-link"
+                        className={`resource-link ${resource.platform === 'roadmap.sh' ? 'roadmap-resource' : ''}`}
                       >
                         <span className="resource-icon">
-                          {getResourceTypeIcon(resource.type)}
+                          {getResourceTypeIcon(resource.type, resource.platform)}
                         </span>
                         <div className="resource-info">
                           <span className="resource-title">{resource.title}</span>
                           <span className="resource-meta">
                             {resource.platform} • {resource.type}
+                            {resource.platform === 'roadmap.sh' && ' • Free Resources'}
                           </span>
                         </div>
-                        {resIndex === 0 && skillResources.length > 1 && (
+                        {resIndex < skillResources.length - 1 && (
                           <span className="resource-arrow">→</span>
                         )}
                       </a>
                     ))}
                   </div>
+                  {/* Show roadmap.sh link if available but not in resources */}
+                  {!skillResources.some(r => r.platform === 'roadmap.sh') && hasRoadmapMapping(skillId) && (
+                    <div className="roadmap-footer">
+                      <a
+                        href={getRoadmapUrl(skillId) || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="roadmap-link"
+                      >
+                        🗺️ View complete roadmap for {skillLabel} on roadmap.sh →
+                      </a>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="path-item-fallback">
-                  <p>
-                    💡 Search for "<strong>{skillLabel} beginner tutorial</strong>" on
-                    YouTube or freeCodeCamp to get started.
-                  </p>
+                  {hasRoadmapMapping(skillId) ? (
+                    <div>
+                      <p>
+                        💡 Check out the complete learning roadmap for <strong>{skillLabel}</strong>:
+                      </p>
+                      <a
+                        href={getRoadmapUrl(skillId) || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="roadmap-link"
+                      >
+                        🗺️ View {skillLabel} roadmap on roadmap.sh →
+                      </a>
+                    </div>
+                  ) : (
+                    <p>
+                      💡 Search for "<strong>{skillLabel} beginner tutorial</strong>" on
+                      YouTube or freeCodeCamp to get started.
+                    </p>
+                  )}
                 </div>
               )}
             </div>
           );
         })}
+      </div>
+
+      {/* Attribution to roadmap.sh */}
+      <div className="learning-path-attribution">
+        <p className="attribution-text">
+          💡 Learning resources curated from{' '}
+          <a
+            href="https://roadmap.sh"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="attribution-link"
+          >
+            roadmap.sh
+          </a>
+          {' '}— Your guide to becoming a better developer
+        </p>
       </div>
     </div>
   );

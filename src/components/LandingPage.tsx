@@ -13,7 +13,7 @@ export function LandingPage({ skills, roles, onComplete }: LandingPageProps) {
   const [name, setName] = useState('');
   const [school, setSchool] = useState('');
   const [graduationYear, setGraduationYear] = useState('');
-  const [experienceLevel, setExperienceLevel] = useState<UserProfile['experienceLevel']>('student');
+  const [experienceLevel, setExperienceLevel] = useState<string>('student');
   const [dreamRoleId, setDreamRoleId] = useState<string | null>(null);
   const [userSkills, setUserSkills] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,12 +23,14 @@ export function LandingPage({ skills, roles, onComplete }: LandingPageProps) {
     e.preventDefault();
     const profile: UserProfile = {
       name: name.trim() || undefined,
+      skills: userSkills,
+      targetRoleId: dreamRoleId || undefined,
+      // Include additional fields that might be used elsewhere
       school: school.trim() || undefined,
       graduationYear: graduationYear.trim() || undefined,
-      experienceLevel,
-      dreamRole: dreamRoleId || undefined,
-      skills: userSkills,
-    };
+      experienceLevel: experienceLevel as any,
+      dreamRole: dreamRoleId || undefined, // Keep for backward compatibility
+    } as UserProfile;
     onComplete(profile);
   };
 
@@ -129,7 +131,7 @@ export function LandingPage({ skills, roles, onComplete }: LandingPageProps) {
                 <select
                   id="experienceLevel"
                   value={experienceLevel}
-                  onChange={(e) => setExperienceLevel(e.target.value as UserProfile['experienceLevel'])}
+                  onChange={(e) => setExperienceLevel(e.target.value)}
                   className="form-select"
                 >
                   <option value="student">Current Student</option>

@@ -95,6 +95,24 @@
   opacity: 0.9;
 }
 
+.footer-attribution {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.footer-link {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: #34d399;
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .app-title {
     font-size: 2rem;

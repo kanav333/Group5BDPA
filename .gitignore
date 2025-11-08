@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Scraped data (temporary files)
+src/data/roadmap-resources-scraped.json
+
+# Build outputs
+dist/
+build/
